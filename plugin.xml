@@ -4,9 +4,6 @@
   <js-module name="notificationCenter" src="www/notificationCenter.js">
     <clobbers target="cordova.plugins.notificationCenter" />
   </js-module>
-
-  <dependency id="com.vladstirbu.cordova.promise" url="https://github.com/vstirbu/PromisesPlugin.git" />
-
   <platform name="ios">
     <hook type="after_plugin_install" src="hooks/add_swift_support.js" />
     <config-file parent="/*" target="config.xml">
@@ -14,6 +11,6 @@
         <param name="ios-package" value="NotificationCenterPlugin" />
       </feature>
     </config-file>
-    <source-file src="src/ios/notificationCenterPlugin.swift" />
+    <source-file src="src/ios/NotificationCenterPlugin.swift" />
   </platform>
 </plugin>
