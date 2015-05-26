@@ -1,26 +1,27 @@
 # cordova-plugin-notificationcenter
 
-Bridge between iOS NSNotificationCenter and JavaScript.
+[Cordova plugin](https://www.npmjs.com/package/cordova-plugin-notificationcenter)
+> Bridge between iOS NSNotificationCenter and JavaScript.
 
-There are tons of notifications that get posted by various components in the iOS SDK.
+> There are tons of notifications that get posted by various components in the iOS SDK.
 Sometimes it can be useful to observe these native notifications in JavaScript.
 
 ## Usage
 
 Add specific observers :
 ```js
-cordova.plugins.notificationCenter.addObserver("NSManagingContextDidSaveChangesNotification",function(){
-  console.log("NSManagingContextDidSaveChangesNotification has been sent");
+cordova.plugins.notificationCenter.addObserver('NSManagingContextDidSaveChangesNotification',function(){
+  console.log('NSManagingContextDidSaveChangesNotification has been sent');
 });
 
 cordova.plugins.notificationCenter.addObserver('UIDeviceOrientationDidChangeNotification',function(){
-  console.log("UIDeviceOrientationDidChangeNotification has been sent");
+  console.log('UIDeviceOrientationDidChangeNotification has been sent');
 });
 ```
 Remove a specific observer :
 
 ```js
-cordova.plugins.notificationCenter.removeObserver("NSManagingContextDidSaveChangesNotification");
+cordova.plugins.notificationCenter.removeObserver('NSManagingContextDidSaveChangesNotification');
 ```
 
 Remove all the added observers :
