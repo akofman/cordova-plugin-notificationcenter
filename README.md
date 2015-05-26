@@ -1,17 +1,33 @@
-# cordova-plugin-boilerplate
+# cordova-plugin-notificationcenter
 
-iOS Cordova plugin boilerplate written in Swift.
+Bridge between iOS NSNotificationCenter and JavaScript.
+
+There are tons of notifications that get posted by various components in the iOS SDK.
+Sometimes it can be useful to observe these native notifications in JavaScript.
 
 ## Usage
 
-```sh
-$ mkdir myNewPluginProject && cd myNewPluginProject
-$ git clone https://github.com/akofman/cordova-plugin-boilerplate.git .
-$ git remote remove origin
-$ git remote add origin yourgitrepourl.git
+Add specific observers :
+```js
+cordova.plugins.notificationCenter.addObserver("NSManagingContextDidSaveChangesNotification",function(){console.log("NSManagingContextDidSaveChangesNotification has been sent");});
+
+cordova.plugins.notificationCenter.addObserver('UIDeviceOrientationDidChangeNotification',function(){console.log("UIDeviceOrientationDidChangeNotification has been sent");});
+```
+Remove a specific observer :
+
+```js
+cordova.plugins.notificationCenter.removeObserver("NSManagingContextDidSaveChangesNotification");
 ```
 
-Now you can code :)
+Remove all the added observers :
+```js
+cordova.plugins.notificationCenter.removeAllObservers()
+```
+
+Enter the debug mode in order to observe all native notifications (do not use this in production ! It's a performance killer) :
+```js
+cordova.plugins.notificationCenter.startDebug();
+```
 
 ## License
 
