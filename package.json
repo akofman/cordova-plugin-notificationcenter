@@ -1,0 +1,24 @@
+{
+  "name": "cordova-plugin-notificationcenter",
+  "version": "0.1.0",
+  "description": "iOS NSNotificationCenter Bridge",
+  "cordova": {
+    "id": "cordova-plugin-notificationcenter",
+    "platforms": [
+      "ios"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/akofman/cordova-plugin-notificationcenter.git"
+  },
+  "keywords": [
+    "cordova",
+    "notification",
+    "NSNotificationCenter",
+    "ecosystem:cordova",
+    "cordova-ios"
+  ],
+  "author": "Alexis Kofman <alexis.kofman@gmail.com> (http://twitter.com/alexiskofman)",
+  "license": "MIT"
+}
