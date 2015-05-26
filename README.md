@@ -9,9 +9,13 @@ Sometimes it can be useful to observe these native notifications in JavaScript.
 
 Add specific observers :
 ```js
-cordova.plugins.notificationCenter.addObserver("NSManagingContextDidSaveChangesNotification",function(){console.log("NSManagingContextDidSaveChangesNotification has been sent");});
+cordova.plugins.notificationCenter.addObserver("NSManagingContextDidSaveChangesNotification",function(){
+  console.log("NSManagingContextDidSaveChangesNotification has been sent");
+});
 
-cordova.plugins.notificationCenter.addObserver('UIDeviceOrientationDidChangeNotification',function(){console.log("UIDeviceOrientationDidChangeNotification has been sent");});
+cordova.plugins.notificationCenter.addObserver('UIDeviceOrientationDidChangeNotification',function(){
+  console.log("UIDeviceOrientationDidChangeNotification has been sent");
+});
 ```
 Remove a specific observer :
 
@@ -21,10 +25,10 @@ cordova.plugins.notificationCenter.removeObserver("NSManagingContextDidSaveChang
 
 Remove all the added observers :
 ```js
-cordova.plugins.notificationCenter.removeAllObservers()
+cordova.plugins.notificationCenter.removeAllObservers();
 ```
 
-Enter the debug mode in order to observe all native notifications (do not use this in production ! It's a performance killer) :
+Enter the debug mode in order to observe all native notifications ( :warning: do not use this in production ! It's a performance killer ) :
 ```js
 cordova.plugins.notificationCenter.startDebug();
 ```
