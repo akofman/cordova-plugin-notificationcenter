@@ -1,16 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<plugin id="cordova-plugin-notificationcenter" version="0.1.0" xmlns="http://apache.org/cordova/ns/plugins/1.0">
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+           id="cordova-plugin-notificationcenter"
+           version="0.1.0" >
+
   <name>NotificationCenter</name>
-  <js-module name="notificationCenter" src="www/notificationCenter.js">
-    <clobbers target="cordova.plugins.notificationCenter" />
-  </js-module>
+  <description>iOS NSNotificationCenter Bridge</description>
+  <license>MIT</license>
+  <keywords>cordova,notificationCenter,NSNotificationCenter</keywords>
+  <repo>https://github.com/akofman/cordova-plugin-notificationcenter.git</repo>
+
   <platform name="ios">
     <hook type="after_plugin_install" src="hooks/add_swift_support.js" />
+
     <config-file parent="/*" target="config.xml">
       <feature name="NotificationCenter">
         <param name="ios-package" value="NotificationCenterPlugin" />
       </feature>
     </config-file>
+
+    <js-module name="notificationCenter" src="www/notificationCenter.js">
+      <clobbers target="cordova.plugins.notificationCenter" />
+    </js-module>
+
     <source-file src="src/ios/NotificationCenterPlugin.swift" />
   </platform>
 </plugin>

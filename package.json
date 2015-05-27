@@ -14,7 +14,7 @@
   },
   "keywords": [
     "cordova",
-    "notification",
+    "notificationCenter",
     "NSNotificationCenter",
     "ecosystem:cordova",
     "cordova-ios"

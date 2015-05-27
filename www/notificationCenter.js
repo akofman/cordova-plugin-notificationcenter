@@ -20,7 +20,7 @@ var exec = require('cordova/exec'),
  /**
   * Stop monitoring all notifications coming from the NSNotificationCenter.
   *
-  * @name stopDebug
+  * @name removeAllObservers
   */
   NotificationCenter.prototype.removeAllObservers = function () {
    exec(null,
