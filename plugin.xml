@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
            id="cordova-plugin-notificationcenter"
-           version="0.1.0" >
+           version="0.1.1" >
 
   <name>NotificationCenter</name>
   <description>iOS NSNotificationCenter Bridge</description>
