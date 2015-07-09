@@ -1,5 +1,7 @@
 # cordova-plugin-notificationcenter
 
+[![NPM](https://nodei.co/npm/cordova-plugin-notificationcenter.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/cordova-plugin-notificationcenter/)
+
 [Cordova plugin](https://www.npmjs.com/package/cordova-plugin-notificationcenter)
 > Bridge between iOS NSNotificationCenter and JavaScript.
 
