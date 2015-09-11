@@ -53,6 +53,6 @@ import Foundation;
     private func didReceiveNotification (notification: NSNotification, command: CDVInvokedUrlCommand) {
         let pluginResult = CDVPluginResult(status: CDVCommandStatus_OK, messageAsString: notification.name);
         pluginResult.setKeepCallbackAsBool(true);
-        commandDelegate.sendPluginResult(pluginResult, callbackId:command.callbackId);
+        commandDelegate!.sendPluginResult(pluginResult, callbackId:command.callbackId);
     }
 }
