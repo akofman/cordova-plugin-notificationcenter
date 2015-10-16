@@ -15,7 +15,7 @@ import Foundation;
         }
 
         if(notificationName != "all"){
-            var observer = notificationCenter.addObserverForName(notificationName, object: nil, queue: nil) { notification in
+            let observer = notificationCenter.addObserverForName(notificationName, object: nil, queue: nil) { notification in
                 self.didReceiveNotification(notification, command: command);
             };
 
@@ -34,7 +34,7 @@ import Foundation;
             }
 
             if(addedObservers.count != 0){
-                for(notificationName,observer) in addedObservers{
+                for(_,observer) in addedObservers{
                     NSNotificationCenter.defaultCenter().removeObserver(observer);
                 }
 
