@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-notificationcenter",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "iOS NSNotificationCenter Bridge",
   "cordova": {
     "id": "cordova-plugin-notificationcenter",
@@ -14,6 +14,8 @@
   },
   "keywords": [
     "cordova",
+    "ios",
+    "notification",
     "notificationCenter",
     "NSNotificationCenter",
     "ecosystem:cordova",
