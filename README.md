@@ -3,10 +3,12 @@
 [![NPM](https://nodei.co/npm/cordova-plugin-notificationcenter.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/cordova-plugin-notificationcenter/)
 
 [Cordova plugin](https://www.npmjs.com/package/cordova-plugin-notificationcenter)
-> Bridge between iOS NSNotificationCenter and JavaScript.
+> Bridge between iOS [NSNotificationCenter](https://developer.apple.com/library/ios/documentation/Cocoa/Reference/Foundation/Classes/NSNotificationCenter_Class/) and JavaScript.
 
-> There are tons of notifications that get posted by various components in the iOS SDK.
-Sometimes it can be useful to observe these native notifications in JavaScript.
+> There are tons of native notifications broadcasted by various components from the iOS SDK.
+Sometimes it can be useful to observe them from the JavaScript side.
+
+> :warning: This plugin does not handle pushNotifications or localNotifications. This is not the purpose.  
 
 ## Usage
 
