@@ -5,18 +5,18 @@ import Foundation;
     var addedObservers = [String: AnyObject]();
 
     func addObserver(command: CDVInvokedUrlCommand) {
-        let notificationCenter = NSNotificationCenter.defaultCenter();
+        let notificationCenter = NotificationCenter.default;
         let notificationName = command.arguments[0] as! String;
 
         if(notificationName == "all" && allNotificationsObserver == nil){
-            allNotificationsObserver = notificationCenter.addObserverForName(nil, object: nil, queue: nil) { notification in
-                self.didReceiveNotification(notification, command: command);
+			allNotificationsObserver = notificationCenter.addObserver(forName: nil, object: nil, queue: nil) { notification in
+				self.didReceiveNotification(notification: notification as NSNotification, command: command);
             };
         }
 
         if(notificationName != "all"){
-            let observer = notificationCenter.addObserverForName(notificationName, object: nil, queue: nil) { notification in
-                self.didReceiveNotification(notification, command: command);
+			let observer = notificationCenter.addObserver(forName: NSNotification.Name(rawValue: notificationName), object: nil, queue: nil) { notification in
+				self.didReceiveNotification(notification: notification as NSNotification, command: command);
             };
 
             addedObservers[notificationName] = observer;
@@ -24,7 +24,7 @@ import Foundation;
     }
 
     func removeObserver(command: CDVInvokedUrlCommand) {
-        let notificationCenter = NSNotificationCenter.defaultCenter();
+        let notificationCenter = NotificationCenter.default;
         let notificationName = command.arguments[0] as! String;
 
         if(notificationName == "all"){
@@ -35,7 +35,7 @@ import Foundation;
 
             if(addedObservers.count != 0){
                 for(_,observer) in addedObservers{
-                    NSNotificationCenter.defaultCenter().removeObserver(observer);
+					NotificationCenter.default.removeObserver(observer);
                 }
 
                 addedObservers.removeAll();
@@ -44,15 +44,15 @@ import Foundation;
 
         if(notificationName != "all"){
             if(addedObservers[notificationName] != nil){
-                notificationCenter.removeObserver(addedObservers[notificationName]!, name: notificationName, object: nil);
-                addedObservers.removeValueForKey(notificationName);
+				notificationCenter.removeObserver(addedObservers[notificationName]!, name: NSNotification.Name(rawValue: notificationName), object: nil);
+                addedObservers[notificationName] = nil;
             }
         }
     }
 
     private func didReceiveNotification (notification: NSNotification, command: CDVInvokedUrlCommand) {
-        let pluginResult = CDVPluginResult(status: CDVCommandStatus_OK, messageAsString: notification.name);
-        pluginResult.setKeepCallbackAsBool(true);
-        commandDelegate!.sendPluginResult(pluginResult, callbackId:command.callbackId);
+		let pluginResult = CDVPluginResult(status: CDVCommandStatus_OK, messageAs: notification.name.rawValue);
+		pluginResult!.setKeepCallbackAs(true);
+		commandDelegate!.send(pluginResult, callbackId:command.callbackId);
     }
 }
